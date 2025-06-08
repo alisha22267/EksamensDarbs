@@ -1,11 +1,16 @@
 package kaste;
 
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Tests {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		Random rand = new Random();
+		ArrayList<Integer> jautRandom = new ArrayList<>();
+		int punkti = 0;
 		
 		String[] jaut1 = {"Kas raksturīgs for ciklam Java?"};
 		String[] atb1 = {
@@ -46,7 +51,12 @@ public class Tests {
 		String[] jaut10 = {"Kāds ir for cikla lietojums masīvos"};
 		String[] atb10 = {"Lai iterētu katru elementu", "Lai inicializētu mainīgo",
 		"Lai noteiktu datu tipu", "Lai piekļūtu elementiem pēc indeksa"}; //0, 3
-
+		
+		String[][] jaut = {jaut1, jaut2, jaut3, jaut4, jaut5, jaut6, jaut7, jaut8, jaut9, jaut10};
+		String[][] atb = {atb1, atb2, atb3, atb4, atb5, atb6, atb7, atb8, atb9, atb10};
+		
+		
+		
 	}
 
 }
