@@ -4,13 +4,20 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Tests {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		ArrayList<Integer> jautRandom = new ArrayList<>();
+		ArrayList<Integer> nepareizi = new ArrayList<>();
 		int punkti = 0;
+		String ievade;
+		int ir = 0;
+		int nav = 0;
+		int sk = 0;
 		
 		String[] jaut1 = {"Kas raksturīgs for ciklam Java?"};
 		String[] atb1 = {
@@ -54,6 +61,25 @@ public class Tests {
 		
 		String[][] jaut = {jaut1, jaut2, jaut3, jaut4, jaut5, jaut6, jaut7, jaut8, jaut9, jaut10};
 		String[][] atb = {atb1, atb2, atb3, atb4, atb5, atb6, atb7, atb8, atb9, atb10};
+		int[][] pareiziAtb = {{0, 2}, {0, 1, 2}, {0, 2, 3}, {0, 2}, {2, 3},
+		{1, 2}, {0, 1, 3}, {1, 2, 3}, {0, 1, 3}, {0, 3}};
+		
+		for(int i=0; i<10; i++) {
+			jautRandom.add(i);
+		}
+		
+		for(int j=0; j<jautRandom.size(); j++) {
+			sk = jautRandom.get(j);
+		}
+		
+		String jautSk = jaut[sk][0]+"\n"; 
+		
+		jautSk = jaut + "1." + atb[sk][0]+ "\n";
+		jautSk = jaut + "2." + atb[sk][1]+ "\n";
+		jautSk = jaut + "3." + atb[sk][2]+ "\n";
+		jautSk = jaut + "4." + atb[sk][3]+ "\n";
+		
+		ievade = JOptionPane.showInputDialog(jautSk);
 		
 		
 		
