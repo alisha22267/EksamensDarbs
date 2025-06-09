@@ -1,6 +1,7 @@
 package kaste;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -13,11 +14,13 @@ public class Tests {
 		Random rand = new Random();
 		ArrayList<Integer> jautRandom = new ArrayList<>();
 		ArrayList<Integer> nepareizi = new ArrayList<>();
+		ArrayList<Integer> lietAtb = new ArrayList<>();
 		int punkti = 0;
 		String ievade;
 		int ir = 0;
 		int nav = 0;
 		int sk = 0;
+		int sk1 = 0;
 		
 		String[] jaut1 = {"Kas raksturīgs for ciklam Java?"};
 		String[] atb1 = {
@@ -68,18 +71,44 @@ public class Tests {
 			jautRandom.add(i);
 		}
 		
+		Collections.shuffle(jautRandom);
 		for(int j=0; j<jautRandom.size(); j++) {
 			sk = jautRandom.get(j);
+			
+			String jautSk = jaut[sk][0]+"\n"; 
+			
+			jautSk = jaut + "1." + atb[sk][0]+ "\n";
+			jautSk = jaut + "2." + atb[sk][1]+ "\n";
+			jautSk = jaut + "3." + atb[sk][2]+ "\n";
+			jautSk = jaut + "4." + atb[sk][3]+ "\n";
+			
+			ievade = JOptionPane.showInputDialog(jautSk);
+			
+			if(ievade == null) {
+				JOptionPane.showMessageDialog(null, "Tests pabiedzās!",
+				"Paziņojums", JOptionPane.INFORMATION_MESSAGE);
+				break;
+			}
+			
+			ievade = ievade.trim();//nonem liekas atstarpes sakum un beigas 
+			String[] ievade1 = ievade.split("\\s+");
+			
+			for(int i=0; i<ievade1.length; i++) {
+				try {
+					sk1 = Integer.parseInt(ievade1[i])-1;
+					if(sk1 >= 0 && sk1 <4) {
+						lietAtb.add(sk1);
+					}
+				} catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Skaitļi nav pareizi ievaditi!",
+					"Kļūda", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+			
+			
+		
+		
 		}
-		
-		String jautSk = jaut[sk][0]+"\n"; 
-		
-		jautSk = jaut + "1." + atb[sk][0]+ "\n";
-		jautSk = jaut + "2." + atb[sk][1]+ "\n";
-		jautSk = jaut + "3." + atb[sk][2]+ "\n";
-		jautSk = jaut + "4." + atb[sk][3]+ "\n";
-		
-		ievade = JOptionPane.showInputDialog(jautSk);
 		
 		
 		
