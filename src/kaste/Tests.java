@@ -31,7 +31,7 @@ public class Tests {
 		String[] atb2 = {"Inicializācija", "Cikla nosacījums",
 		"Iterācijas izteiksme", "Cikla nosaukums"};//0, 1, 2
 		
-		String[] jaut3 = {"Kas izraisa cikla pārtraukšanu?"};
+		String[] jaut3 = {"Kas izraisa for cikla pārtraukšanu?"};
 		String[] atb3 = {"break", "continue", "return", "Nepatiesa nosacījuma vērtība"};//0, 2, 3
 		
 		String[] jaut4 = {"Kāda ir for cikla galvenā priekšrocība?"};
@@ -42,10 +42,10 @@ public class Tests {
 		String[] atb5 = {"Palielina i par 1", "Nekad nebeidzas", 
 		"Kamēr i < 10", "Palielina i par 2"}; //2, 3
 		
-		String[] jaut6 = {"Kurš ir pareizs skaitītāja tips?"};
+		String[] jaut6 = {"Kurš ir pareizs skaitītāja tips for ciklā?"};
 		String[] atb6 = {"String", "int", "char", "boolean"}; //1, 2
 		
-		String[] jaut7 = {"Ko dara continue ciklā?"};
+		String[] jaut7 = {"Ko dara continue for ciklā?"};
 		String[] atb7 = {"Pāriet uz nākamo iterāciju", "Darbojas tikai for ciklā",
 		"Pārtrauc visu ciklu", "Izlaiž atlikušās darbības šajā iterācijā"}; //0, 1, 3
 		
