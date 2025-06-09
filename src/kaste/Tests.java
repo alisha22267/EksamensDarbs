@@ -15,16 +15,19 @@ public class Tests {
 		ArrayList<Integer> jautRandom = new ArrayList<>();
 		ArrayList<Integer> nepareizi = new ArrayList<>();
 		ArrayList<Integer> lietAtb = new ArrayList<>();
+		ArrayList<Integer> pareizas = new ArrayList<>();
 		int punkti = 0;
+		int atbilde;
 		String ievade;
-		int ir = 0;
-		int nav = 0;
+		int ir = 0; //punkti
+		int nav = 0; //punkti
 		int sk = 0;
 		int sk1 = 0;
+		boolean pareizi = false;
 		
 		String[] jaut1 = {"Kas raksturīgs for ciklam Java?"};
-		String[] atb1 = {
-		"To lieto, ja zināms atkārtojumu skaits", "Tajā jāizmanto boolean tips mainīgajiem",
+		String[] atb1 = {"To lieto, ja zināms atkārtojumu skaits", 
+		"Tajā jāizmanto boolean tips mainīgajiem",
 		"To var izmantot masīvu iterēšanai",
 		"To nedrīkst ligzdot jeb izmantot iekš cita cikla"};//0, 2
 		
@@ -77,10 +80,10 @@ public class Tests {
 			
 			String jautSk = jaut[sk][0]+"\n"; 
 			
-			jautSk = jaut + "1." + atb[sk][0]+ "\n";
-			jautSk = jaut + "2." + atb[sk][1]+ "\n";
-			jautSk = jaut + "3." + atb[sk][2]+ "\n";
-			jautSk = jaut + "4." + atb[sk][3]+ "\n";
+			jautSk += "1. " + atb[sk][0]+ "\n";
+			jautSk += "2. " + atb[sk][1]+ "\n";
+			jautSk += "3. " + atb[sk][2]+ "\n";
+			jautSk += "4. " + atb[sk][3]+ "\n";
 			
 			ievade = JOptionPane.showInputDialog(jautSk);
 			
@@ -90,6 +93,7 @@ public class Tests {
 				break;
 			}
 			
+			lietAtb.clear(); //lai katram nakoša jautajuma ievade lauka but tukšs
 			ievade = ievade.trim();//nonem liekas atstarpes sakum un beigas 
 			String[] ievade1 = ievade.split("\\s+");
 			
@@ -105,13 +109,33 @@ public class Tests {
 				}
 			}
 			
-			
-		
+				pareizas.clear();//lai iepriekšie rezultati nesajuakt ar nākamiem
+			    for (int i = 0; i < pareiziAtb[sk].length; i++) {
+			        pareizas.add(pareiziAtb[sk][i]);
+			    }
+				
+			    //collections ir šeit, lai ne sajaukt secību atbildēm
+			    Collections.sort(lietAtb);
+			    Collections.sort(pareizas);
+			    
+				if(lietAtb.equals(pareizas)) {
+					JOptionPane.showMessageDialog(null, 
+					"Atbildē IR pareizā. Jūs saņēmat +2 punktu!", "Paziņojums",
+					JOptionPane.INFORMATION_MESSAGE);
+					punkti += 2;
+					
+				} else {
+					JOptionPane.showMessageDialog(null, 
+					"Atbildē NAV pareizā. Jūs saņēmat -1 punktu!", "Paziņojums",
+					JOptionPane.ERROR_MESSAGE);
+					punkti -= 1;
+				}
+				
+				if(punkti < 0) {
+					punkti = 0;
+				}
+
 		
 		}
-		
-		
-		
 	}
-
 }
