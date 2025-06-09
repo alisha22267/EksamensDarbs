@@ -17,13 +17,9 @@ public class Tests {
 		ArrayList<Integer> lietAtb = new ArrayList<>();
 		ArrayList<Integer> pareizas = new ArrayList<>();
 		int punkti = 0;
-		int atbilde;
 		String ievade;
-		int ir = 0; //punkti
-		int nav = 0; //punkti
 		int sk = 0;
 		int sk1 = 0;
-		boolean pareizi = false;
 		
 		String[] jaut1 = {"Kas raksturīgs for ciklam Java?"};
 		String[] atb1 = {"To lieto, ja zināms atkārtojumu skaits", 
@@ -88,14 +84,14 @@ public class Tests {
 			ievade = JOptionPane.showInputDialog(jautSk);
 			
 			if(ievade == null) {
-				JOptionPane.showMessageDialog(null, "Tests pabiedzās!",
+				JOptionPane.showMessageDialog(null, "Tests ir partraukts!",
 				"Paziņojums", JOptionPane.INFORMATION_MESSAGE);
 				break;
 			}
 			
-			lietAtb.clear(); //lai katram nakoša jautajuma ievade lauka but tukšs
+			lietAtb.clear();
 			ievade = ievade.trim();//nonem liekas atstarpes sakum un beigas 
-			String[] ievade1 = ievade.split("\\s+");
+			String[] ievade1 = ievade.split("\\s+");//sadala tekstu pēc vienas vai vairākām atstarpēm secībā
 			
 			for(int i=0; i<ievade1.length; i++) {
 				try {
@@ -123,19 +119,34 @@ public class Tests {
 					"Atbildē IR pareizā. Jūs saņēmat +2 punktu!", "Paziņojums",
 					JOptionPane.INFORMATION_MESSAGE);
 					punkti += 2;
+					pareizas.add(sk);
 					
 				} else {
 					JOptionPane.showMessageDialog(null, 
 					"Atbildē NAV pareizā. Jūs saņēmat -1 punktu!", "Paziņojums",
 					JOptionPane.ERROR_MESSAGE);
 					punkti -= 1;
+					nepareizi.add(sk);
 				}
 				
 				if(punkti < 0) {
 					punkti = 0;
 				}
-
-		
 		}
+		String beigas = "Jūs pabeidzāt testu!\n"
+		+ "Kopējie iegūtie punkti: " + punkti + "\n";
+
+		if (!nepareizi.isEmpty()) {
+			beigas += "\nJautājumi, uz kuriem atbildēts nepareizi:\n";
+			for (int i = 0; i < nepareizi.size(); i++) {
+				int x = nepareizi.get(i);
+				beigas += "- " + jaut[x][0] + "\n";
+			}
+		} else {
+			beigas += "\nVisas atbildes ir pareizas!";
+		}
+
+		JOptionPane.showMessageDialog(null, beigas,
+		"Rezultāts", JOptionPane.INFORMATION_MESSAGE);
 	}
 }
