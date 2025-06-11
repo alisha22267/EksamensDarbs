@@ -2,8 +2,9 @@
 Java programma ar JOptionPane, kas pārbauda zināšanas par ciklu ar skaitītāju(for cikls).
 
 ### Par progrāmmu:
-Šī ir testēšanas programma, kas veidota ar Java un izmanto JOptionPane grafiskos ievades/izvades logus.
+Šī ir testēšanas programmā, kas veidota ar Java un izmanto JOptionPane grafiskos ievades/izvades logus.
 Programma pārbauda lietotāja zināšanas par ciklu ar skaitītāju, izmantojot macību testu ar 10 jautājumiem.
+- Šajā programmā pievienots mācību materiāls, kur jūs varat pamācīties un pēc tam mēģināt izpildīt testu!
 
 **Darāmo darbu saraksts**
 - [x] Izveidot jautājumu sarakstu (teksts, 4 atbildes, pareizās atbildes).
@@ -98,6 +99,22 @@ Programma pārbauda lietotāja zināšanas par ciklu ar skaitītāju, izmantojot
 
 - Tā izskatās rezultātu logs ar iegūtajiem punktiem un jautājumiem, uz kuriem atbildēts kļūdaini:
 ![image](https://github.com/user-attachments/assets/4dd7156a-cb53-4ee2-8150-113a1ba3577f)
+
+### Mācību materiāls
+- Mācību materiālā jūs izpētīsiet for cikla veidus, piemēram, bezgalīgo ciklu, iekšējo un ārējo ciklu, kā arī dažādus piemērus.
+- Šeit ir trīs piemēri ar kodu fragmentiem:
+
+- Piemērs NR.1
+  
+![image](https://github.com/user-attachments/assets/d80ffe69-d739-4101-b2e9-4831cb812a97)
+
+- Piemērs NR.2
+  
+![image](https://github.com/user-attachments/assets/a6e7709f-491a-4a97-ab03-23a3c3461bdd)
+
+- Piemērs NR.3
+  
+![image](https://github.com/user-attachments/assets/f149cb3b-54cf-4162-b4d4-7eeab8204bc7)
 
 
 
